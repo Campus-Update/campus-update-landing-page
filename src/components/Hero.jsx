@@ -13,7 +13,7 @@ export default function Hero() {
               institution. Delivered to your phone.
             </p>
 
-            <div className="mt-10 flex items-center gap-5">
+            <div className="mt-5 flex items-center gap-5">
               <a
                 href="#waitlist"
                 className="rounded-full bg-gradient-to-r from-brand-purple to-brand-deep px-6 py-4 text-[17px] leading-[26px] text-white shadow-cta transition-[filter] hover:brightness-110"
@@ -68,11 +68,11 @@ export default function Hero() {
         </div>
 
         {/* Campus photo */}
-        <div className="mt-12 overflow-hidden rounded-[20px] lg:mt-[47px]">
+        <div className="mt-12 aspect-[1500/543] overflow-hidden rounded-[20px] lg:mt-[47px]">
           <img
             src="/images/campus-hero.png"
             alt="Students walking across a university campus quad"
-            className="h-auto w-full object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
       </div>

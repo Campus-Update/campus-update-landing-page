@@ -1,171 +1,138 @@
-const FEATURE_ITEMS = [
-  {
-    title: "Official News",
-    body: "Stay in the loop with verified updates from your institution and trusted campus channels.",
-    tone: "primary",
-  },
-  {
-    title: "Announcements",
-    body: "Never miss deadlines, events or important alerts that affect your student life.",
-    tone: "secondary",
-  },
-  {
-    title: "Events",
-    body: "Discover what is happening on campus and join the moments that matter most.",
-    tone: "primary",
-  },
-  {
-    title: "School Calendar",
-    body: "Keep track of academic milestones, office hours, and important schedule changes.",
-    tone: "secondary",
-  },
-  {
-    title: "Personalized Feed",
-    body: "Follow your faculty, clubs and departments for updates that match your campus journey.",
-    tone: "accent",
-  },
-  {
-    title: "Health Notifications",
-    body: "Receive timely guidance and campus updates when safety and wellbeing matter most.",
-    tone: "secondary",
-  },
-  {
-    title: "Student Resources",
-    body: "Connect with support, opportunities, and practical information built around student needs.",
-    tone: "primary",
-  },
-  {
-    title: "Campus Community",
-    body: "Stay connected to what your peers are learning, organizing, and celebrating.",
-    tone: "accent",
-  },
-];
-
-const toneMap = {
-  primary: "from-[#483DEB] via-[#4F46E5] to-[#F3F4FF]",
-  secondary: "from-[#181A21] via-[#222532] to-[#F5F5F7]",
-  accent: "from-[#5E5BEF] via-[#4F46E5] to-[#F5F5FF]",
-};
-
-function FeatureIcon({ index }) {
-  const common = "h-6 w-6 text-white";
-
-  if (index % 3 === 0) {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        aria-hidden="true"
-        className={common}
-      >
-        <path
-          d="M6 18.5V9.5C6 7.84 7.34 6.5 9 6.5H15C16.66 6.5 18 7.84 18 9.5V18.5"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M8.5 9.5H15.5M8.5 13H15.5M8.5 16.5H12.5"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-      </svg>
-    );
-  }
-
-  if (index % 3 === 1) {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        aria-hidden="true"
-        className={common}
-      >
-        <path
-          d="M8 16L12 4L16 16"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M7 12H17"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-      </svg>
-    );
-  }
-
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={common}>
-      <path
-        d="M12 3.5v9.75M18.5 12.5l-6.5 6.5-6.5-6.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+const ICONS = {
+  news: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#111214" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+      <path d="M19.5 8.5v10a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1" />
+      <path d="M19.5 8.5h-2a1 1 0 0 0-1 1v7.5a1.5 1.5 0 0 0 3 0v-7a1.5 1.5 0 0 1 0-1.5Z" />
+      <path d="M8 8.5h5.5M8 12.5h5.5M8 16.5h3.5" />
     </svg>
-  );
+  ),
+  megaphone: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#111214" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+      <path d="M3.5 10v4a1 1 0 0 0 1 1H7l4.5 4a1 1 0 0 0 1.5-.87V5.87A1 1 0 0 0 11.5 5L7 9H4.5a1 1 0 0 0-1 1Z" />
+      <path d="M17 9.5a4 4 0 0 1 0 5M19.5 7.5a7 7 0 0 1 0 9" />
+    </svg>
+  ),
+  timeline: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#111214" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+      <path d="M4.5 6v12" />
+      <circle cx="4.5" cy="8" r="1" fill="#111214" stroke="none" />
+      <circle cx="4.5" cy="16" r="1" fill="#111214" stroke="none" />
+      <path d="M9 7.5h10M9 15.5h12" />
+      <circle cx="16" cy="7.5" r="1.75" fill="#fff" />
+      <circle cx="18" cy="15.5" r="1.75" fill="#fff" />
+    </svg>
+  ),
+  calendar: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#111214" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+      <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
+      <path d="M3.5 10.5h17M8 3.5v4M16 3.5v4M8 14h3M8 17h3M14 14h2M14 17h2" />
+    </svg>
+  ),
+  user: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#111214" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="10" r="2.5" />
+      <path d="M7.5 17.5c.8-2.2 2.5-3.5 4.5-3.5s3.7 1.3 4.5 3.5" />
+    </svg>
+  ),
+  bell: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#111214" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+      <path d="M18 15.5H6c1.2-1.2 1.5-3 1.5-5a4.5 4.5 0 0 1 9 0c0 2 .3 3.8 1.5 5Z" />
+      <path d="M10.5 18.5a1.5 1.5 0 0 0 3 0M18.5 8l1.5-1.5M5.5 8 4 6.5" />
+    </svg>
+  ),
 }
+
+const FEATURES = [
+  {
+    icon: 'news',
+    title: 'Official News',
+    titleClass: 'text-[29px] leading-[36px] tracking-[-0.58px]',
+    body: 'Access verified news published directly by your institution. No rumours, no third-party sources.',
+    cardClass: 'bg-gradient-to-br from-[#1F1F1F] to-[#414143] border border-[#262626]',
+  },
+  {
+    icon: 'megaphone',
+    title: 'Announcements',
+    titleClass: 'text-[29px] leading-[36px] tracking-[-0.58px]',
+    body: 'Never miss critical notices, policy updates or important messages from academic and admin offices.',
+    cardClass: 'bg-gradient-to-br from-[#4F46E5] to-[#201C5C] border-2 border-[#262626]',
+  },
+  {
+    icon: 'timeline',
+    title: 'Events',
+    titleClass: 'text-[29px] leading-[36px] tracking-[-0.58px]',
+    body: 'Discover campus events, workshops, career fairs, seminars and social gatherings all in one feed.',
+    cardClass: 'bg-gradient-to-br from-[#1F1F1F] to-[#414143] border border-[#262626]',
+  },
+  {
+    icon: 'calendar',
+    title: 'School Calendar',
+    titleClass: 'text-[26px] leading-[33px] tracking-[-0.52px]',
+    body: 'Stay aligned with exam schedules, registration deadlines and key academic dates.',
+    cardClass: 'bg-gradient-to-br from-[#4F46E5] to-[#2C277F] border-2 border-[#262626]',
+  },
+  {
+    icon: 'user',
+    title: 'Personalized Feed',
+    titleClass: 'text-[26px] leading-[33px] tracking-[-0.52px]',
+    body: 'Content tailored to your faculty, department and level. No irrelevant noise just your information.',
+    cardClass: 'bg-gradient-to-br from-[#1F1F1F] to-[#414143] border border-[#262626]',
+  },
+  {
+    icon: 'bell',
+    title: 'Instant Notifications',
+    titleClass: 'text-[26px] leading-[33px] tracking-[-0.52px]',
+    body: 'Real-time push alerts for the announcements and updates that need your immediate attention.',
+    cardClass: 'bg-gradient-to-br from-[#4F46E5] to-[#2C277F] border-2 border-[#262626]',
+  },
+]
 
 export default function FeaturesSection() {
   return (
-    <section className="pb-10 pt-10 md:pb-16 lg:pt-20">
-      <div className="container-page">
-        <div className="mx-auto max-w-[760px] text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#1F1F1F] bg-[#111111] px-3 py-1.5 text-sm font-medium text-white shadow-badge">
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#4F46E5] text-[10px] text-white">
-              ✦
-            </span>
-            Features
-          </span>
-          <h2 className="mt-5 text-[32px] font-medium leading-[40px] tracking-[-0.64px] text-[#111111] md:text-[44px] md:leading-[48px]">
-            Built for every part of campus life
-          </h2>
-          <p className="mt-5 text-[20px] leading-[22px] text-[#3C3C3C]">
-            From academics to student life, keep every campus update in one
-            trusted place.
-          </p>
-        </div>
+    <section id="features" className="bg-white pb-[152px] pt-[131px]">
+      <div className="mx-auto w-full max-w-[1348px] px-6">
+        {/* Header */}
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#2D2D2D] bg-[#242424] px-3 py-1.5 shadow-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true">
+            <path d="M11 21H8.25L9.5 13.75H5V11.53L13 3h2.75L14.5 10.25H19v2.22L11 21Z" />
+          </svg>
+          <span className="text-base font-medium leading-5 tracking-[-0.32px] text-white">Features</span>
+        </span>
+        <h2 className="mt-[25px] text-[32px] font-medium leading-[40px] text-black md:text-[40px] md:leading-[44px]">
+          Built for every part of campus life
+        </h2>
+        <p className="mt-[25px] max-w-[840px] text-[20px] leading-[22px] text-black">
+          One platform that brings together everything students and staff need to stay
+          genuinely informed.
+        </p>
+        <a
+          href="#waitlist"
+          className="mt-[25px] inline-flex rounded-full border border-white bg-gradient-to-b from-[#3E3C3C] to-[#2A2828] px-5 py-4 text-base leading-6 text-white transition-opacity hover:opacity-90"
+        >
+          Explore all features
+        </a>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {FEATURE_ITEMS.map((item, index) => (
+        {/* Cards */}
+        <div className="mt-[51px] grid gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-5 xl:gap-y-11">
+          {FEATURES.map((f) => (
             <article
-              key={item.title}
-              className="group overflow-hidden rounded-[22px] border border-[#D9D9D9] bg-white p-2 shadow-[0_12px_28px_rgba(31,31,31,0.06)]"
+              key={f.title}
+              className={`flex h-[300px] flex-col justify-center gap-[25px] rounded-[20px] p-8 ${f.cardClass}`}
             >
-              <div
-                className={`relative isolate flex aspect-square flex-col justify-between overflow-hidden rounded-[18px] bg-gradient-to-br ${toneMap[item.tone]} p-5 sm:p-6`}
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_82%,rgba(255,255,255,0.55),transparent_24%)]" />
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.15),transparent_42%)]" />
-
-                <div className="relative flex items-center justify-between">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/30 bg-white/10 backdrop-blur-sm">
-                    <FeatureIcon index={index} />
-                  </span>
-                  <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/75">
-                    Live
-                  </span>
-                </div>
-
-                <div className="relative space-y-2">
-                  <h3 className="text-[26px] font-medium leading-[30px] tracking-[-0.52px] text-white">
-                    {item.title}
-                  </h3>
-                  <p className="max-w-[36ch] text-[14px] leading-[20px] text-white/80">
-                    {item.body}
-                  </p>
-                </div>
+              <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#2F2A89] bg-gradient-to-b from-white to-[#E0E0E0] shadow-chip">
+                {ICONS[f.icon]}
+              </span>
+              <div>
+                <h3 className={`font-medium text-[#D8D8D8] ${f.titleClass}`}>{f.title}</h3>
+                <p className="mt-[25px] text-base leading-6 tracking-[-0.16px] text-white/55">
+                  {f.body}
+                </p>
               </div>
             </article>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
