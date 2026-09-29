@@ -1,47 +1,63 @@
 const LINK_COLUMNS = [
   {
-    heading: 'Product',
+    heading: "Product",
     links: [
-      { label: 'Features', href: '#features' },
-      { label: 'Events', href: '#features' },
-      { label: 'How it Works', href: '#how-it-works' },
-      { label: 'Why Us', href: '#why-us' },
+      { label: "Features", href: "#features" },
+      { label: "Events", href: "#features" },
+      { label: "How it Works", href: "#how-it-works" },
+      { label: "Why Us", href: "#why-us" },
     ],
   },
   {
-    heading: 'Company',
+    heading: "Company",
     links: [
-      { label: 'Home', href: '#' },
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
+      { label: "Home", href: "#" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Service", href: "#" },
     ],
   },
   {
-    heading: 'Institution',
+    heading: "Institution",
     links: [
-      { label: 'For Universities', href: '#' },
-      { label: 'Partner With', href: '#' },
-      { label: 'Contact Us', href: '#' },
+      { label: "For Universities", href: "#" },
+      { label: "Partner With", href: "#" },
+      { label: "Contact Us", href: "#" },
     ],
   },
-]
+];
 
 function XIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#141B34" aria-hidden="true">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#141B34"
+      aria-hidden="true"
+    >
       <path d="M18.9 3H22l-7.03 8.03L23.2 21h-6.56l-5.14-6.1L5.6 21H2.5l7.52-8.6L1.6 3h6.72l4.64 5.56L18.9 3Zm-1.15 16.1h1.72L7.08 4.8H5.24l12.51 14.3Z" />
     </svg>
-  )
+  );
 }
 
 function InstagramIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141B34" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#141B34"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.2" cy="6.8" r="0.5" fill="#141B34" />
     </svg>
-  )
+  );
 }
 
 export default function Footer() {
@@ -59,14 +75,18 @@ export default function Footer() {
             {/* Brand block */}
             <div>
               <div className="flex items-center gap-1.5">
-                <img src="/logo-mark-white.svg" alt="Campus Update logo" className="h-[34px] w-[34px]" />
+                <img
+                  src="/logo-mark-white.svg"
+                  alt="Campus Update logo"
+                  className="h-[34px] w-[34px]"
+                />
                 <span className="text-[32px] font-medium leading-[38px] text-white">
                   Campus Update
                 </span>
               </div>
               <p className="mt-5 max-w-[274px] text-xs leading-4 text-white">
-                A digital campus information platform connecting students, staff and
-                institutions across Africa.
+                A digital campus information platform connecting students, staff
+                and institutions across Africa.
               </p>
               <div className="mt-5 flex gap-2.5">
                 <a
@@ -115,12 +135,12 @@ export default function Footer() {
 
           {/* Giant wordmark */}
           <div className="p-2.5">
-            <p className="whitespace-nowrap text-[clamp(48px,12.1vw,210px)] leading-[1.09] tracking-[-0.02em] text-[#EEEDFD]">
+            <p className="whitespace-nowrap text-[clamp(36px,9vw,210px)] leading-[1.09] tracking-[-0.02em] text-[#EEEDFD] md:text-[clamp(48px,12.1vw,210px)]">
               Campus Update
             </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

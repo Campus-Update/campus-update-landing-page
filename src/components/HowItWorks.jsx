@@ -1,36 +1,42 @@
 const STEPS = [
   {
-    num: '01',
-    title: 'Choose Your Institution',
-    body: 'Search and select your university or college from our growing network of partner institutions.',
-    bg: '#4F46E5',
-    chipBorder: '#2F2A89',
+    num: "01",
+    title: "Choose Your Institution",
+    body: "Search and select your university or college from our growing network of partner institutions.",
+    bg: "#4F46E5",
+    chipBorder: "#2F2A89",
     activeDot: 0,
   },
   {
-    num: '02',
-    title: 'Personalize Your Profile',
-    body: 'Set your faculty, department and level so Campus Update surfaces what is most relevant to you.',
-    bg: '#1F1F1F',
-    chipBorder: '#4F46E5',
+    num: "02",
+    title: "Personalize Your Profile",
+    body: "Set your faculty, department and level so Campus Update surfaces what is most relevant to you.",
+    bg: "#1F1F1F",
+    chipBorder: "#4F46E5",
     activeDot: 1,
   },
   {
-    num: '03',
-    title: 'Stay Connected',
-    body: 'Receive official news, announcements, events and opportunities all from verified institutional sources.',
-    bg: '#4F46E5',
-    chipBorder: '#2F2A89',
+    num: "03",
+    title: "Stay Connected",
+    body: "Receive official news, announcements, events and opportunities all from verified institutional sources.",
+    bg: "#4F46E5",
+    chipBorder: "#2F2A89",
     activeDot: 2,
   },
-]
+];
 
 function BoltIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="#FFFFFF"
+      aria-hidden="true"
+    >
       <path d="M11 21H8.25L9.5 13.75H5V11.53L13 3h2.75L14.5 10.25H19v2.22L11 21Z" />
     </svg>
-  )
+  );
 }
 
 function StepCard({ step }) {
@@ -50,7 +56,7 @@ function StepCard({ step }) {
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              className={`h-2.5 w-2.5 rounded-full bg-white ${i === step.activeDot ? 'opacity-100' : 'opacity-40'}`}
+              className={`h-2.5 w-2.5 rounded-full bg-white ${i === step.activeDot ? "opacity-100" : "opacity-40"}`}
             />
           ))}
         </span>
@@ -65,7 +71,7 @@ function StepCard({ step }) {
         </p>
       </div>
     </article>
-  )
+  );
 }
 
 export default function HowItWorks() {
@@ -83,8 +89,8 @@ export default function HowItWorks() {
           From sign-up to informed in minutes
         </h2>
         <p className="mt-5 max-w-[867px] text-[20px] leading-[22px] text-black">
-          No complex setup. Just choose your institution, set your profile, and Campus Update
-          does the rest.
+          No complex setup. Just choose your institution, set your profile, and
+          Campus Update does the rest.
         </p>
       </div>
 
@@ -106,11 +112,11 @@ export default function HowItWorks() {
             <img
               src="/images/news-web.png"
               alt="Live news headlines on a screen"
-              className="aspect-[864/347] w-full rounded-[10px] object-cover"
+              className="aspect-[4/3] w-full rounded-[10px] object-cover md:aspect-[864/347]"
             />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -9,8 +9,8 @@ export default function Hero() {
               Everything happening on campus, in one place.
             </h1>
             <p className="mt-5 text-[20px] leading-[22px] text-[#555555]">
-              Verified school news, announcements, events and dates. Published by your
-              institution. Delivered to your phone.
+              Verified school news, announcements, events and dates. Published
+              by your institution. Delivered to your phone.
             </p>
 
             <div className="mt-5 flex items-center gap-5">
@@ -21,7 +21,10 @@ export default function Hero() {
                 Get Started
               </a>
               <span aria-hidden="true" className="h-[25px] w-px bg-black/15" />
-              <a href="#how-it-works" className="group flex items-center gap-1.5 text-[17px] leading-[26px] text-[#3D3D3D]">
+              <a
+                href="#how-it-works"
+                className="group flex items-center gap-1.5 text-[17px] leading-[26px] text-[#3D3D3D]"
+              >
                 View feature
                 <svg
                   className="transition-transform group-hover:translate-x-0.5"
@@ -60,7 +63,10 @@ export default function Hero() {
                 aria-label="Enter your email"
                 className="h-[54px] min-w-0 flex-1 rounded-l-full rounded-r-md bg-[#F2F2F2] px-4 text-[17px] text-black placeholder:text-[#666666] focus:outline-none"
               />
-              <button type="submit" className="shrink-0 pl-4 text-[17px] leading-[26px] text-white">
+              <button
+                type="submit"
+                className="shrink-0 pl-4 text-[17px] leading-[26px] text-white"
+              >
                 Join Waitlist
               </button>
             </form>
@@ -68,7 +74,7 @@ export default function Hero() {
         </div>
 
         {/* Campus photo */}
-        <div className="mt-12 aspect-[1500/543] overflow-hidden rounded-[20px] lg:mt-[47px]">
+        <div className="mt-12 aspect-[4/3] overflow-hidden rounded-[20px] md:aspect-[1500/543] lg:mt-[47px]">
           <img
             src="/images/campus-hero.png"
             alt="Students walking across a university campus quad"
@@ -77,5 +83,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
